@@ -22,15 +22,16 @@ const sections=[
 {title:"اکبرجوجه",items:[{name:"اکبرجوجه",price:930000,desc:"همراه سس مخصوص"}]},
 {title:"کته خورشت",items:[
 {name:"زرشک‌پلو با مرغ",rice:750000,noRice:580000},{name:"خورشت فسنجان با مرغ",rice:910000,noRice:740000},{name:"خورشت فسنجان با گوشت",rice:940000,noRice:770000},{name:"خورشت قورمه‌سبزی",rice:790000,noRice:620000},{name:"خورشت قیمه سیب‌زمینی",rice:790000,noRice:620000}]},
+{title:"کته ماهی",items:[{name:"ماهی کبابی",price:1290000},{name:"ماهی سوخاری",price:1340000}]},
+{title:"کته کباب",items:[
+{name:"جوجه کباب",rice:250000,noRice:80000},{name:"کباب کوبیده",rice:750000,noRice:580000},{name:"کباب چنجه",rice:1900000,noRice:1730000},{name:"کباب ترش",rice:1900000,noRice:1730000},{name:"کباب کوبیده مخصوص",rice:1050000,noRice:880000},{name:"کباب کوبیده دو سیخ",rice:1100000,noRice:930000},{name:"کباب کوبیده بازاری",rice:1150000,noRice:980000},{name:"کباب دیگی",rice:800000,noRice:630000},{name:"جوجه کباب مخصوص",rice:850000,noRice:680000},{name:"جوجه کباب ترش",rice:900000,noRice:730000},{name:"کباب وزیری",rice:1100000,noRice:930000},{name:"خوراک بال و ماهیچه",price:600000,desc:"یک پرس"}]}
 {title:"غذاهای گیاهی",items:[{name:"کشک بادمجان",price:420000},{name:"میرزا قاسمی",price:380000},{name:"باقالا قاتق",price:410000}]},
 {title:"کته اضافه",items:[{name:"کته زعفرانی",price:300000},{name:"کته سماق",price:330000},{name:"کته سبزی",price:330000}]},
 {title:"سوپ و آش",items:[{name:"سوپ زعفرانی",price:130000},{name:"آش رشته مخصوص",price:180000}]},
 {title:"سالاد",items:[{name:"سالاد فصل",price:200000},{name:"سالاد کلم",price:170000},{name:"سالاد شیرازی",price:150000}]},
 {title:"پیش‌غذا",items:[{name:"ماست",price:130000},{name:"ماست بورانی",price:170000},{name:"سیرماست",price:140000},{name:"ماست‌وخیار",price:150000},{name:"ماست دلار",price:150000},{name:"سیرترشی",price:110000},{name:"ترشی",price:50000},{name:"زیتون",price:150000},{name:"زیتون پرورده",price:200000}]},
 {title:"سرویس کامل و نوشیدنی",items:[{name:"سرویس کامل",price:450000,desc:"شامل سوپ، سالاد، ماست و نوشیدنی"},{name:"انواع نوشیدنی",desc:"قیمت روز"}]},
-{title:"کته ماهی",items:[{name:"ماهی کبابی",price:1290000},{name:"ماهی سوخاری",price:1340000}]},
-{title:"کته کباب",items:[
-{name:"جوجه کباب",rice:250000,noRice:80000},{name:"کباب کوبیده",rice:750000,noRice:580000},{name:"کباب چنجه",rice:1900000,noRice:1730000},{name:"کباب ترش",rice:1900000,noRice:1730000},{name:"کباب کوبیده مخصوص",rice:1050000,noRice:880000},{name:"کباب کوبیده دو سیخ",rice:1100000,noRice:930000},{name:"کباب کوبیده بازاری",rice:1150000,noRice:980000},{name:"کباب دیگی",rice:800000,noRice:630000},{name:"جوجه کباب مخصوص",rice:850000,noRice:680000},{name:"جوجه کباب ترش",rice:900000,noRice:730000},{name:"کباب وزیری",rice:1100000,noRice:930000},{name:"خوراک بال و ماهیچه",price:600000,desc:"یک پرس"}]}
+
 ];
 const money=n=>new Intl.NumberFormat('fa-IR').format(n)+' تومان';
 let active=0;const tabs=document.getElementById('tabs'),items=document.getElementById('items'),sectionName=document.getElementById('sectionName');
