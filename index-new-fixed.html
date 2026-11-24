@@ -19,10 +19,10 @@ header{background:linear-gradient(120deg,var(--red),var(--orange));color:white;p
 <main class="wrap"><div class="notice">قیمت‌ها به تومان هستند. برای اطلاع از موجودی روز با رستوران تماس بگیرید.</div><nav class="tabs" id="tabs" aria-label="دسته‌بندی منو"></nav><section><div class="section-title"><h2 id="sectionName"></h2></div><div class="items" id="items"></div></section><footer>اکبرجوجه بامزه‌س! ❤️</footer></main>
 <script>
 const sections=[
-{title:"اکبرجوجه",items:[{name:"اکبرجوجه",price:930000,desc:"همراه سس مخصوص"}]},
+{title:"اکبرجوجه",items:[{name:"اکبرجوجه",rice:930000,noRice:760000,desc:"همراه سس مخصوص"}]},
 {title:"کته خورشت",items:[
 {name:"زرشک‌پلو با مرغ",rice:750000,noRice:580000},{name:"خورشت فسنجان با مرغ",rice:910000,noRice:740000},{name:"خورشت فسنجان با گوشت",rice:940000,noRice:770000},{name:"خورشت قورمه‌سبزی",rice:790000,noRice:620000},{name:"خورشت قیمه سیب‌زمینی",rice:790000,noRice:620000}]},
-{title:"کته ماهی",items:[{name:"ماهی کبابی",price:1290000},{name:"ماهی سوخاری",price:1340000}]},
+{title:"کته ماهی",items:[{name:"ماهی کبابی",rice:1290000,noRice:1120000},{name:"ماهی سوخاری",rice:1340000,noRice:1170000}]},
 {title:"کته کباب",items:[
 {name:"جوجه کباب",rice:250000,noRice:80000},{name:"کباب کوبیده",rice:750000,noRice:580000},{name:"کباب چنجه",rice:1900000,noRice:1730000},{name:"کباب ترش",rice:1900000,noRice:1730000},{name:"کباب کوبیده مخصوص",rice:1050000,noRice:880000},{name:"کباب کوبیده دو سیخ",rice:1100000,noRice:930000},{name:"کباب کوبیده بازاری",rice:1150000,noRice:980000},{name:"کباب دیگی",rice:800000,noRice:630000},{name:"جوجه کباب مخصوص",rice:850000,noRice:680000},{name:"جوجه کباب ترش",rice:900000,noRice:730000},{name:"کباب وزیری",rice:1100000,noRice:930000},{name:"خوراک بال و ماهیچه",price:600000,desc:"یک پرس"}]},
 {title:"غذاهای گیاهی",items:[{name:"کشک بادمجان",price:420000},{name:"میرزا قاسمی",price:380000},{name:"باقالا قاتق",price:410000}]},
@@ -35,6 +35,6 @@ const sections=[
 ];
 const money=n=>new Intl.NumberFormat('fa-IR').format(n)+' تومان';
 let active=0;const tabs=document.getElementById('tabs'),items=document.getElementById('items'),sectionName=document.getElementById('sectionName');
-function render(){tabs.innerHTML='';sections.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s.title;b.className=i===active?'active':'';b.onclick=()=>{active=i;render()};tabs.appendChild(b)});const s=sections[active];sectionName.textContent=s.title;items.innerHTML='';s.items.forEach(it=>{const card=document.createElement('article');card.className='item';let price='';if(it.rice!==undefined){price=`<div class="price">${money(it.rice)}<small>با برنج</small></div><div class="price">${money(it.noRice)}<small>بدون برنج</small></div>`}else if(it.price!==undefined){price=`<div class="price">${money(it.price)}</div>`}else{price='<div class="price">قیمت روز</div>'}card.innerHTML=`<div class="item-top"><div><div class="name">${it.name}</div>${it.desc?`<div class="desc">${it.desc}</div>`:''}</div><div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end">${price}</div></div>`;items.appendChild(card)})}
+function render(){tabs.innerHTML='';sections.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s.title;b.className=i===active?'active':'';b.onclick=()=>{active=i;render()};tabs.appendChild(b)});const s=sections[active];sectionName.textContent=s.title;items.innerHTML='';s.items.forEach(it=>{const card=document.createElement('article');card.className='item';let price='';if(it.rice!==undefined){price=`<div class="price">${money(it.rice)}<small>با برنج</small></div><div class="price">${money(it.noRice)}<small>خوراک</small></div>`}else if(it.price!==undefined){price=`<div class="price">${money(it.price)}</div>`}else{price='<div class="price">قیمت روز</div>'}card.innerHTML=`<div class="item-top"><div><div class="name">${it.name}</div>${it.desc?`<div class="desc">${it.desc}</div>`:''}</div><div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end">${price}</div></div>`;items.appendChild(card)})}
 render();
 </script></body></html>
