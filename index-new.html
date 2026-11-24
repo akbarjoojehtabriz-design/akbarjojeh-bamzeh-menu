@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#c62828"><title>منوی اکبرجوجه بامزه‌س</title>
+<style>
+:root{--red:#c62828;--orange:#f36b21;--yellow:#ffc928;--ink:#292321;--muted:#756d68;--cream:#fffaf1;--card:#fff;--line:#f0e5d9}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,"Segoe UI",sans-serif;line-height:1.8}
+header{background:linear-gradient(120deg,var(--red),var(--orange));color:white;padding:24px 16px 20px;text-align:center;border-radius:0 0 26px 26px;box-shadow:0 5px 18px #8b271b25}
+.logo{width:88px;height:88px;object-fit:contain;background:#fff;border-radius:20px;padding:5px;margin-bottom:8px}h1{font-size:25px;margin:2px 0;font-weight:900}header p{margin:2px 0 0;color:#fff5df;font-size:13px}
+.wrap{max-width:760px;margin:auto;padding:16px 13px 40px}.notice{background:#fff1cf;border:1px solid #ffe09a;border-radius:14px;padding:9px 12px;color:#694b16;font-size:12px;margin:0 0 14px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:3px 1px 12px;scrollbar-width:thin}.tabs button{white-space:nowrap;border:1px solid #f0c9a8;background:#fff;border-radius:999px;padding:8px 14px;color:#6c3b2d;font:inherit;font-size:13px;cursor:pointer}.tabs button.active{background:var(--red);color:white;border-color:var(--red);box-shadow:0 3px 9px #c6282825}
+.section-title{display:flex;align-items:center;gap:9px;margin:10px 2px 12px}.section-title:before{content:"";width:7px;height:25px;border-radius:8px;background:var(--yellow)}.section-title h2{font-size:19px;margin:0;color:var(--red)}
+.items{display:grid;grid-template-columns:1fr;gap:10px}.item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 14px;box-shadow:0 3px 12px #53331a08}.item-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.name{font-weight:800;font-size:15px}.desc{font-size:12px;color:var(--muted);margin-top:2px}.price{color:var(--red);font-weight:900;white-space:nowrap;font-size:14px}.price small{display:block;color:var(--muted);font-size:10px;font-weight:400;text-align:left}.empty{padding:22px;text-align:center;color:var(--muted)}footer{text-align:center;color:var(--muted);font-size:11px;margin-top:25px}
+@media(min-width:600px){.items{grid-template-columns:1fr 1fr}.wrap{padding-top:22px}.logo{width:96px;height:96px}}
+</style></head>
+<body>
+<header><img class="logo" src="logo.jpg" alt="لوگوی اکبرجوجه بامزه" onerror="this.style.display='none'"><h1>اکبرجوجه بامزه‌س!</h1><p>طعم خوشمزه‌ی دورهمی‌های خانوادگی</p></header>
+<main class="wrap"><div class="notice">قیمت‌ها به تومان هستند. برای اطلاع از موجودی روز با رستوران تماس بگیرید.</div><nav class="tabs" id="tabs" aria-label="دسته‌بندی منو"></nav><section><div class="section-title"><h2 id="sectionName"></h2></div><div class="items" id="items"></div></section><footer>اکبرجوجه بامزه‌س! ❤️</footer></main>
+<script>
+const sections=[
+{title:"اکبرجوجه",items:[{name:"اکبرجوجه",price:930000,desc:"همراه سس مخصوص"}]},
+{title:"کته خورشت",items:[
+{name:"زرشک‌پلو با مرغ",rice:750000,noRice:580000},{name:"خورشت فسنجان با مرغ",rice:910000,noRice:740000},{name:"خورشت فسنجان با گوشت",rice:940000,noRice:770000},{name:"خورشت قورمه‌سبزی",rice:790000,noRice:620000},{name:"خورشت قیمه سیب‌زمینی",rice:790000,noRice:620000}]},
+{title:"غذاهای گیاهی",items:[{name:"کشک بادمجان",price:420000},{name:"میرزا قاسمی",price:380000},{name:"باقالا قاتق",price:410000}]},
+{title:"کته اضافه",items:[{name:"کته زعفرانی",price:300000},{name:"کته سماق",price:330000},{name:"کته سبزی",price:330000}]},
+{title:"سوپ و آش",items:[{name:"سوپ زعفرانی",price:130000},{name:"آش رشته مخصوص",price:180000}]},
+{title:"سالاد",items:[{name:"سالاد فصل",price:200000},{name:"سالاد کلم",price:170000},{name:"سالاد شیرازی",price:150000}]},
+{title:"پیش‌غذا",items:[{name:"ماست",price:130000},{name:"ماست بورانی",price:170000},{name:"سیرماست",price:140000},{name:"ماست‌وخیار",price:150000},{name:"ماست دلار",price:150000},{name:"سیرترشی",price:110000},{name:"ترشی",price:50000},{name:"زیتون",price:150000},{name:"زیتون پرورده",price:200000}]},
+{title:"سرویس کامل و نوشیدنی",items:[{name:"سرویس کامل",price:450000,desc:"شامل سوپ، سالاد، ماست و نوشیدنی"},{name:"انواع نوشیدنی",desc:"قیمت روز"}]},
+{title:"کته ماهی",items:[{name:"ماهی کبابی",price:1290000},{name:"ماهی سوخاری",price:1340000}]},
+{title:"کته کباب",items:[
+{name:"جوجه کباب",rice:250000,noRice:80000},{name:"کباب کوبیده",rice:750000,noRice:580000},{name:"کباب چنجه",rice:1900000,noRice:1730000},{name:"کباب ترش",rice:1900000,noRice:1730000},{name:"کباب کوبیده مخصوص",rice:1050000,noRice:880000},{name:"کباب کوبیده دو سیخ",rice:1100000,noRice:930000},{name:"کباب کوبیده بازاری",rice:1150000,noRice:980000},{name:"کباب دیگی",rice:800000,noRice:630000},{name:"جوجه کباب مخصوص",rice:850000,noRice:680000},{name:"جوجه کباب ترش",rice:900000,noRice:730000},{name:"کباب وزیری",rice:1100000,noRice:930000},{name:"خوراک بال و ماهیچه",price:600000,desc:"یک پرس"}]}
+];
+const money=n=>new Intl.NumberFormat('fa-IR').format(n)+' تومان';
+let active=0;const tabs=document.getElementById('tabs'),items=document.getElementById('items'),sectionName=document.getElementById('sectionName');
+function render(){tabs.innerHTML='';sections.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s.title;b.className=i===active?'active':'';b.onclick=()=>{active=i;render()};tabs.appendChild(b)});const s=sections[active];sectionName.textContent=s.title;items.innerHTML='';s.items.forEach(it=>{const card=document.createElement('article');card.className='item';let price='';if(it.rice!==undefined){price=`<div class="price">${money(it.rice)}<small>با برنج</small></div><div class="price">${money(it.noRice)}<small>بدون برنج</small></div>`}else if(it.price!==undefined){price=`<div class="price">${money(it.price)}</div>`}else{price='<div class="price">قیمت روز</div>'}card.innerHTML=`<div class="item-top"><div><div class="name">${it.name}</div>${it.desc?`<div class="desc">${it.desc}</div>`:''}</div><div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end">${price}</div></div>`;items.appendChild(card)})}
+render();
+</script></body></html>
